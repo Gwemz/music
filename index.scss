@@ -1,0 +1,268 @@
+@import "mixin.scss";
+*{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  color:#000;
+}
+body{
+  font-family:"微软雅黑";
+}
+.bg_img{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0 auto;
+  background-image:url("../imgs/bg_large.jpg");
+  background-position:center center;
+  background-repeat:no-repeat;
+  //给图像设置高斯模糊
+  -webkit-filter: blur(55px);
+  filter:blur(55px);
+}
+.bg_player_mask{
+  //background-color: rgb(118,117,88);
+  //background-color:rgba(0,0,0,.35);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(64, 32, 32,.35);
+  z-index:2;
+}
+.container{
+  width:1120px;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  margin:0 auto;
+  z-index:2;
+}
+.content{
+  width:100%;
+  font-size:14px;
+  color:#fff;
+  margin-top:20px;
+  overflow:hidden;
+  h2{
+    color:#fff;
+    font-weight:400;
+    margin:20px 0 40px;
+  }
+  .con_left{
+    width:75%;
+    float:left;
+    i{
+      float:left;
+      width:100%;
+      height:1px;
+      background-color:#fff;
+      opacity:.5;
+    }
+    ul{
+      cursor:pointer;
+      width:100%;
+      height:50px;
+      float:left;
+      li{
+        float:left;
+        text-align:center;
+        height:50px;
+        line-height:50px;
+        a{
+          color:#fff;
+          transition:color .8s ease;
+        }
+        a.active{
+          color:#F45238;
+        }
+      }
+      li.header_name{
+        width:68%;
+        position:relative;
+        span{
+          position:absolute;
+          width:10px;
+          height:10px;
+          top:20px;
+          left:100px;
+          @include bgimg();
+        }
+        span.active{
+          background-image:url("../imgs/wave.gif");
+        }
+      }
+      li.header_author{
+        width:16%;
+      }
+      li.header_time{
+        width:16%;
+      }
+      &:hover li a{
+        color:#F45238;
+      }
+    }
+  }
+  .con_right{
+    width:25%;
+    float:left;
+    .tupian{
+      width:200px;
+      margin:0 auto;
+      img{
+        width:100%;
+        height:auto;
+      }
+    }
+    div.song_singer,div.song_album,div.song_name{
+      width:100%;
+      height:28px;
+      color:rgba(225,225,225,.8);
+      text-align:center;
+      line-height:28px;
+      a{
+        color:rgba(225,225,225,.8);
+        transition:color .8s ease;
+      }
+      a:hover{
+        color:#fff;
+      }
+    }
+    .song_name{
+      margin-top:15px;
+    }
+  }
+}
+
+.controler{
+  position:absolute;
+  bottom:20px;
+  left:0;
+  width:100%;
+  height:50px;
+  background-color:rgba(0,0,0,.8);
+  border-radius:15px;
+  z-index:2;
+  line-height:50px;
+  padding:10px;
+}
+.prev{
+  @include square(50px);
+  @include margin_10();
+  float:left;
+}
+.play{
+  @include square(50px);
+  float:left;
+  border-radius:50%;
+  background-color:transparent;
+  background-image:url("../imgs/bofang.svg");
+  @include bgimg();
+  transition:opacity .8s ease;
+  &:hover{
+    opacity:.5;
+  }
+}
+.next{
+  @include square(50px);
+  @include margin_10();
+  float:left;
+}
+.prev img,.next img{
+  width:35px;
+  height:35px;
+  margin-top:7.5px;
+  transition:opacity .8s ease;
+  &:hover{
+    opacity:.5;
+  }
+}
+.next img{
+  float:right;
+}
+.pause{
+  background-image:url("../imgs/zanting.svg");
+  @include bgimg();
+}
+.progress{
+  float:left;
+  @include progress();
+  width:43%;
+  margin-right:10px;
+  background-color:rgba(255,255,255,.2);
+  position:relative;
+  .circle{
+    @include square(30px);
+    margin-top:-10px;
+    border-radius:50%;
+    background-color:#fff;
+  }
+  .progressed{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#fff;
+    width:0;
+    height:8px;
+    border-radius:5px;
+  }
+}
+.time{
+  width:10%;
+  height:50px;
+  //border:1px solid #000;
+  float:left;
+  font-size:18px;
+  color:#fff;
+  text-align:center;
+  line-height:50px;
+  @include margin_10;
+}
+.voice{
+  width:30px;
+  height:30px;
+  background-color:transparent;
+  background-image:url("../imgs/voice.svg");
+  @include bgimg();
+  float:left;
+  margin-top:10px;
+  @include circle();
+  transition:opacity .8s ease;
+  &:hover{
+    opacity:.5;
+  }
+}
+.voice_0{
+  background-image:url("../imgs/voice0.svg");
+}
+.voice_progress{
+  width:18%;
+  float:left;
+  @include progress();
+  background-color:rgba(255,255,255,.2);
+  position:relative;
+  .circle{
+    @include circle();
+    @include square(20px);
+    background-color:#fff;
+    margin-top:-4px;
+  }
+  .progressed{
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:#fff;
+    width:0;
+    height:8px;
+    border-radius:5px;
+  }
+}

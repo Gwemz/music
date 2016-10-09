@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="imgs/music_icon.png" type="image/x-icon">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <div class="bg_img"></div>
+    <div class="bg_player_mask"></div>
+    <div class="container">
+        <audio src="musics/爱的代价.mp3" ></audio>
+        <div class="content">
+            <h2>播放列表</h2>
+            <div class="con_left">
+                <i class="line"></i>
+                <ul>
+                    <li class="header_name">歌曲</li>
+                    <li class="header_author">歌手</li>
+                    <li class="header_time">时长</li>
+                </ul>
+                <i class="line"></i>
+                <ul class="line_con">
+                    <li class="header_name">
+                        <span class="active"></span>
+                        <a href="javascript:;" class="active">爱的代价(老炮儿 电影原声带)</a>
+                    </li>
+                    <li class="header_author"><a href="javascript:;" class="active">冯小刚</a></li>
+                    <li class="header_time">03:41</li>
+                </ul>
+                <i class="line"></i>
+                <ul class="line_con">
+                    <li class="header_name">
+                        <span></span>
+                        <a href="javascript:;">大好时光(大好时光 电视剧原声带)</a>
+                    </li>
+                    <li class="header_author"><a href="javascript:;">赵可</a></li>
+                    <li class="header_time">03:30</li>
+                </ul>
+                <i class="line"></i>
+                <ul class="line_con">
+                    <li class="header_name">
+                        <span></span>
+                        <a href="javascript:;">时光(时光·漫步)</a>
+                    </li>
+                    <li class="header_author"><a href="javascript:;">许巍</a></li>
+                    <li class="header_time">05:50</li>
+                </ul>
+                <i class="line"></i>
+                <ul class="line_con">
+                    <li class="header_name">
+                        <span></span>
+                        <a href="javascript:;">一次就好(夏洛特烦恼 电影原声带)</a>
+                    </li>
+                    <li class="header_author"><a href="javascript:;">杨宗纬</a></li>
+                    <li class="header_time">04:26</li>
+                </ul>
+                <i class="line"></i>
+                <ul class="line_con">
+                    <li class="header_name">
+                        <span></span>
+                        <a href="javascript:;">无衣(我是特种兵之霹雳火 电视原声带)</a>
+                    </li>
+                    <li class="header_author"><a href="javascript:;">阚立文</a></li>
+                    <li class="header_time">02:40</li>
+                </ul>
+                <i class="line"></i>
+                <ul class="line_con">
+                    <li class="header_name">
+                        <span></span>
+                        <a href="javascript:;">你最珍贵(不后悔)</a>
+                    </li>
+                    <li class="header_author"><a href="javascript:;">张学友;高慧君 - </a></li>
+                    <li class="header_time">04:47</li>
+                </ul>
+                <i class="line"></i>
+            </div>
+            <div class="con_right">
+                <div class="tupian">
+                    <img src="./imgs/爱的代价.jpg" alt="加载失败">
+                </div>
+                <div class="song_name">
+                    歌曲名：
+                    <a href="javascript:;" class="music_name">爱的代价</a>
+                </div>
+                <div class="song_singer">
+                    歌手：
+                    <a href="javascript:;" class="music_singer">冯小刚</a>
+                </div>
+                <div class="song_album">
+                    专辑名：
+                    <a href="javascript:;" class="music_album">老炮儿 电影原声带</a>
+                </div>
+            </div>
+        </div>
+        <div class="controler">
+            <div class="prev"><!--<img src="./imgs/prev.svg" alt="">--></div>
+            <div class="play"></div>
+            <div class="next"><!--<img src="./imgs/next.svg" alt="">--></div>
+            <div class="progress">
+                <div class="progressed"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="time">
+                <span id="dangqian">00:00</span>
+                <span>/</span>
+                <span id="zong">03:41</span>
+            </div>
+            <div class="voice"></div>
+            <div class="voice_progress">
+                <div class="circle"></div>
+                <div class="progressed"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
